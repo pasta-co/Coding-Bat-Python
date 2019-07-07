@@ -1,0 +1,15 @@
+def array_count9(nums):
+    '''
+    nums: an array of ints
+    
+    returns: the number of 9's in the array
+    
+    array_count9([1, 2, 9]) → 1
+    array_count9([1, 9, 9]) → 2
+    array_count9([1, 9, 9, 3, 9]) → 3
+    '''
+    count = 0
+    for i in nums:
+        if i == 9:
+            count += 1
+    return count
