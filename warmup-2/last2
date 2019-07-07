@@ -1,0 +1,25 @@
+def last2(str):
+    '''
+    str: a string
+    
+    returns: the number of times that a substring of length 2
+    appears in the string and also as the last 2 chars of the
+    string (not counting end substring)
+    '''
+    #"hixxhi" ---> 1
+    #xaxxaxaxx ---> 1
+    #axxxaaxx ---> 2
+    #hixxxxhixx ---> 3
+    #hixxyee ---> 0
+    #hellobobhi ---> 0
+    
+    lastTwo = str[-2:]
+    count = 0
+   
+    #don't have to create new variables for indexes
+    #just use the state variable i! to iterate substrings
+    for i in range(len(str) - 2):
+        sub = str[i:i+2]
+        if sub == lastTwo:
+            count += 1
+    return count
