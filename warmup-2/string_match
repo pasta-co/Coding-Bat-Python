@@ -1,0 +1,20 @@
+def string_match(a, b):
+    '''
+    a, b: strings
+    
+    returns: the number of the positions where they contain the
+    same length 2 substring.
+    '''
+    best = ""
+    count = 0
+    small = min(a, b)
+    
+    for i in range(len(small)):
+        a_sub = a[i:i+2]
+        b_sub = b[i:i+2]
+        if a_sub == b_sub:
+            best += a_sub
+            if len(best) == 2:
+                best = ""
+                count += 1
+    return count
